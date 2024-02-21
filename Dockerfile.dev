@@ -1,0 +1,9 @@
+FROM golang:1.22-alpine
+
+WORKDIR /usr/src/app
+
+COPY go.mod fullcycle.go ./
+
+RUN go build -v -o /usr/local/bin/fullcycle ./...
+
+CMD ["fullcycle"]
